@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush00.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isunwoo <isunwoo@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/16 14:01:47 by isunwoo           #+#    #+#             */
+/*   Updated: 2022/04/17 11:37:09 by yham             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+extern void	ft_putchar(char c);
+
+void	print_char_by_coord(int now_x, int now_y, int x, int y)
+{
+	if ((now_x == 1 && (now_y == 1 || now_y == y))
+		|| (now_x == x && (now_y == 1 || now_y == y)))
+		ft_putchar('o');
+	else if (now_x == 1 || now_x == x)
+		ft_putchar('|');
+	else if (now_y == 1 || now_y == y)
+		ft_putchar('-');
+	else
+		ft_putchar(' ');
+}
+
+void	rush(int x, int y)
+{
+	int	idx_x;
+	int	idx_y;
+
+	if (x <= 0 || y <= 0)
+		return ;
+	idx_x = 1;
+	idx_y = 1;
+	while (idx_y <= y)
+	{
+		idx_x = 1;
+		while (idx_x <= x)
+		{
+			print_char_by_coord(idx_x, idx_y, x, y);
+			idx_x++;
+		}
+		ft_putchar('\n');
+		idx_y++;
+	}
+}

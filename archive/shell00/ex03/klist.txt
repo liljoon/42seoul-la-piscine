@@ -1,0 +1,5 @@
+Credentials cache: API:D3EEAF8F-D177-4A44-B57B-6E4C97695456
+        Principal: isunwoo@42SEOUL.KR
+
+  Issued                Expires               Principal
+Apr 12 15:01:14 2022  Apr 13 01:01:11 2022  krbtgt/42SEOUL.KR@42SEOUL.KR
